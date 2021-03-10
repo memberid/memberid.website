@@ -1,0 +1,42 @@
+{
+ "name": "mid",
+ "version": "0.0.0",
+ "scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "serve": "vite preview"
+ },
+ "dependencies": {
+  "@fortawesome/fontawesome-pro": "^5.15.2",
+  "@fortawesome/fontawesome-svg-core": "^1.2.34",
+  "@fortawesome/free-brands-svg-icons": "^5.15.2",
+  "@fortawesome/free-solid-svg-icons": "^5.15.2",
+  "@fortawesome/pro-duotone-svg-icons": "^5.15.2",
+  "@fortawesome/pro-light-svg-icons": "^5.15.2",
+  "@fortawesome/pro-regular-svg-icons": "^5.15.2",
+  "@fortawesome/pro-solid-svg-icons": "^5.15.2",
+  "@fortawesome/vue-fontawesome": "^3.0.0-3",
+  "postcss-import": "^14.0.0",
+  "vue": "^3.0.5",
+  "vue-router": "^4.0.4",
+  "vue-snap": "^1.0.0-alpha.5"
+ },
+ "devDependencies": {
+  "@vitejs/plugin-vue": "^1.1.4",
+  "@vue/cli-plugin-eslint": "~4.5.0",
+  "@vue/compiler-sfc": "^3.0.5",
+  "autoprefixer": "^10.2.4",
+  "eslint": "^7.20.0",
+  "eslint-config-prettier": "^8.1.0",
+  "eslint-plugin-prettier": "^3.3.1",
+  "eslint-plugin-vue": "^7.0.0-beta.4",
+  "postcss": "^8.2.6",
+  "prettier": "^2.2.1",
+  "sass": "^1.32.8",
+  "sass-loader": "^11.0.1",
+  "tailwindcss": "^2.0.3",
+  "vite": "^2.0.0",
+  "vue-loader": "^15.9.6",
+  "vue-template-compiler": "^2.6.12"
+ }
+}

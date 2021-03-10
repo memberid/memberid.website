@@ -1,0 +1,47 @@
+:root {
+ --color-primary: #292929;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+ h1 {
+  @apply text-8xl;
+ }
+ h2 {
+  @apply text-6xl;
+ }
+ h3 {
+  @apply text-4xl;
+ }
+ h4 {
+  @apply text-2xl;
+ }
+}
+
+@layer utilities {
+ .max-w-screen-auto {
+  @apply sm:max-w-screen-sm md:max-w-screen-md xl:max-w-screen-xl 2xl:max-w-screen-2xl;
+ }
+ .mobile {
+  @apply lg:hidden;
+ }
+ .desktop {
+  @apply hidden lg:block;
+ }
+ .fade-enter-active,
+ .fade-leave-active {
+  transition: opacity 0.5s ease;
+ }
+
+ .fade-enter-from,
+ .fade-leave-to {
+  opacity: 0;
+ }
+
+ .invert {
+  filter: invert(1);
+ }
+}
