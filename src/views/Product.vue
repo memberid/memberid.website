@@ -13,18 +13,20 @@
      >
       <div class="block">
        <div class="carousel__item">
-        <div class="card-product">
-         <div class="card-product__item glass">
-          <div class="card-product__image">
-           <img :src="product.logoURL" />
-          </div>
-          <div class="absolute h-full w-full p-3">
-           <div class="card-product__background" :class="product.name">
-            <img :src="product.imageURL" />
+        <router-link to="/">
+         <div class="card-product">
+          <div class="card-product__item glass">
+           <div class="card-product__image">
+            <img :src="product.logoURL" />
+           </div>
+           <div class="absolute h-full w-full p-3">
+            <div class="card-product__background" :class="product.name">
+             <img :src="product.imageURL" />
+            </div>
            </div>
           </div>
          </div>
-        </div>
+        </router-link>
        </div>
        <div
         class="w-3/4 xl:w-2/3 2xl:w-2/4 py-4 m-auto text-center text-base font-semibold"
@@ -118,7 +120,7 @@ export default {
    &-product {
     @apply shadow-md;
     min-width: 200px;
-    height: 500px;
+    height: 55vh;
     @screen md {
      min-width: 180px;
     }
@@ -189,7 +191,7 @@ export default {
       width: 100%;
       height: 100%;
       object-fit: contain;
-      object-position: 50% 14rem;
+      object-position: 50% 26vh;
       opacity: 0.25;
      }
     }
