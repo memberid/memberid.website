@@ -19,6 +19,7 @@ import Header from "./components/layout/Header.vue";
 import Footer from "./components/layout/Footer.vue";
 import ButtonBase from "./components/button/ButtonBase.vue";
 import CardOverview from "./components/card/CardOverview.vue";
+import Contact from "./components/layout/LayoutContact.vue";
 
 library.add(fab, far, fal, fad);
 
@@ -31,6 +32,8 @@ app.component("Header", Header).component("Footer", Footer);
 app.component("ButtonBase", ButtonBase);
 // Card
 app.component("CardOverview", CardOverview);
+// Layout
+app.component("Contact", Contact);
 
 // Library
 app.component("font-awesome-icon", FontAwesomeIcon);

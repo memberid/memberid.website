@@ -5,7 +5,7 @@
   </div>
   <div class="card__body">
    <div class="card__description" v-html="desc"></div>
-   <div class="card__button">
+   <div class="card__button" v-if="button">
     <ButtonBase>{{ button.title }}</ButtonBase>
    </div>
   </div>
@@ -35,6 +35,14 @@ export default {
    }
   }
 
+  &.right {
+   .card {
+    &__image {
+     @apply lg:order-first lg:ml-0;
+    }
+   }
+  }
+
   @screen lg {
    @apply grid grid-flow-col grid-rows-1;
    grid-template-columns: repeat(2, minmax(0, 100%));
@@ -60,7 +68,7 @@ export default {
   }
 
   @screen xl {
-   grid-template-columns: repeat(2, minmax(0, 40%));
+   grid-template-columns: repeat(2, minmax(0, 80%));
   }
  }
 }

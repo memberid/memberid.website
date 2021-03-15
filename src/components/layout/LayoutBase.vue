@@ -92,6 +92,12 @@
  }
 }
 
+.scroll-indicator {
+ position: absolute;
+ bottom: 0;
+ opacity: 0.8;
+}
+
 .card {
  @apply flex flex-wrap py-6 space-y-6;
 
@@ -216,7 +222,7 @@
  }
 
  &__brands {
-  @apply bg-white p-4 rounded-xl sm:p-8;
+  @apply bg-white px-4 rounded-xl sm:px-8;
   .carousel {
    @apply lg:px-6;
    &__slide {

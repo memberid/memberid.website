@@ -12,21 +12,19 @@
       :key="key"
      >
       <div class="block">
-       <div class="carousel__item">
-        <router-link to="/">
-         <div class="card-product">
-          <div class="card-product__item glass">
-           <div class="card-product__image">
-            <img :src="product.logoURL" />
-           </div>
-           <div class="absolute h-full w-full p-3">
-            <div class="card-product__background" :class="product.name">
-             <img :src="product.imageURL" />
-            </div>
+       <div class="carousel__item" @click="goToDetail(product.name)">
+        <div class="card-product">
+         <div class="card-product__item glass">
+          <div class="card-product__image">
+           <img :src="product.logoURL" />
+          </div>
+          <div class="absolute h-full w-full p-3">
+           <div class="card-product__background" :class="product.name">
+            <img :src="product.imageURL" />
            </div>
           </div>
          </div>
-        </router-link>
+        </div>
        </div>
        <div
         class="w-3/4 xl:w-2/3 2xl:w-2/4 py-4 m-auto text-center text-base font-semibold"
@@ -64,12 +62,84 @@ export default {
     title: "All in One Loyalty Solution",
     logoURL: "/src/assets/solva_logo.png",
     imageURL: "/src/assets/solva_image.png",
+    data: {
+     logo: "/src/assets/solva_logo.svg",
+     subheading: "All in One Loyalty Solutions",
+     description: `Solution to increase your customer loyalty and reward them with wide range
+     of redemption options`,
+     features: [
+      {
+       type: "Services",
+       name: "Loyalty Solution",
+      },
+      {
+       type: "Industry",
+       name: "Food and Beverage,Retail & Services",
+      },
+     ],
+     cards: [
+      {
+       placement: "left",
+       title: "Create a loyalty app your customers will love",
+       desc: `A comprehensive loyalty app that is fully customizable to your brand but already packed with features you need to engage with your customers.`,
+       imageURL: `/src/assets/image/solva/solva-1.png`,
+      },
+      {
+       placement: "right",
+       title: "Easy and intuitive program management",
+       desc: `A loyalty  program  system  shouldn’t be managed by IT or your dev team. With our user friendly backoffice platform, changes are easy and intuitive for anyone on your team.`,
+       imageURL: `/src/assets/image/solva/solva-2.png`,
+      },
+      {
+       placement: "left",
+       title: "Monitoring your loyalty program with ease",
+       desc: `Provide a key metrics data , so you can see how your loyalty program perform at a glance. Leveraging data insights to make an informed decision-making`,
+       imageURL: `/src/assets/image/solva/solva-3.png`,
+      },
+     ],
+    },
    },
    {
     name: "Madoo",
     title: "Points Wallet & Exchange",
     logoURL: "/src/assets/madoo_logo.png",
     imageURL: "/src/assets/madoo_image.png",
+    data: {
+     logo: "/src/assets/solva_logo.svg",
+     subheading: "All in One Loyalty Solutions",
+     description: `Solution to increase your customer loyalty and reward them with wide range
+     of redemption options`,
+     features: [
+      {
+       type: "Services",
+       name: "Loyalty Solution",
+      },
+      {
+       type: "Industry",
+       name: "Food and Beverage,Retail & Services",
+      },
+     ],
+     cards: [
+      {
+       placement: "left",
+       title: "Create a loyalty app your customers will love",
+       desc: `A comprehensive loyalty app that is fully customizable to your brand but already packed with features you need to engage with your customers.`,
+       imageURL: `/src/assets/image/solva/solva-1.png`,
+      },
+      {
+       placement: "right",
+       title: "Easy and intuitive program management",
+       desc: `A loyalty  program  system  shouldn’t be managed by IT or your dev team. With our user friendly backoffice platform, changes are easy and intuitive for anyone on your team.`,
+       imageURL: `/src/assets/image/solva/solva-2.png`,
+      },
+      {
+       placement: "left",
+       title: "Monitoring your loyalty program with ease",
+       desc: `Provide a key metrics data , so you can see how your loyalty program perform at a glance. Leveraging data insights to make an informed decision-making`,
+       imageURL: `/src/assets/image/solva/solva-3.png`,
+      },
+     ],
+    },
    },
    {
     name: "Hotelis",
@@ -97,6 +167,14 @@ export default {
    },
   },
  }),
+ methods: {
+  goToDetail(name) {
+   this.$router.push({
+    name: "Product Detail",
+    params: { name: name },
+   });
+  },
+ },
 };
 </script>
 <style lang="scss">
