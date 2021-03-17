@@ -1,13 +1,22 @@
 <template>
  <div class="footer">
   <div class="footer__socmed">
-   <div class="footer__socmed-item">
+   <div
+    class="footer__socmed-item"
+    @click="goTo('https://www.linkedin.com/company/memberid')"
+   >
     <font-awesome-icon :icon="['fab', 'linkedin']" />
    </div>
-   <div class="footer__socmed-item">
+   <div
+    class="footer__socmed-item"
+    @click="goTo('https://www.instagram.com/loyalhackers/')"
+   >
     <font-awesome-icon :icon="['fab', 'instagram']" />
    </div>
-   <div class="footer__socmed-item">
+   <div
+    class="footer__socmed-item"
+    @click="goTo('https://www.facebook.com/memberidglobal/?ref=br_rs')"
+   >
     <font-awesome-icon :icon="['fab', 'facebook-square']" />
    </div>
   </div>
@@ -15,7 +24,13 @@
  </div>
 </template>
 <script>
-export default {};
+export default {
+ methods: {
+  goTo(name) {
+   window.open(name, "_blank");
+  },
+ },
+};
 </script>
 <style lang="scss">
 .footer {
@@ -34,7 +49,7 @@ export default {};
   }
 
   &-item {
-   @apply font-bold text-xl lg:text-2xl xl:text-3xl;
+   @apply font-bold cursor-pointer text-xl lg:text-2xl xl:text-3xl;
   }
  }
 

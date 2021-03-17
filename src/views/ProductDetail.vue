@@ -2,7 +2,7 @@
  <div class="main__product-detail">
   <section class="main__section">
    <div class="product-detail__banner">
-    <div class="product-detail__head">
+    <div class="product-detail__head" data-aos="fade-up">
      <div class="product-detail__brand">
       <img :src="selectData.logo" />
      </div>
@@ -21,7 +21,7 @@
     </div>
    </div>
   </section>
-  <section class="main__section py-16 lg:py-20">
+  <section class="main__section py-16 lg:py-20" data-aos="fade-left">
    <div class="space-y-6">
     <div class="main__underline w-0 mb-4" />
     <div class="product-detail__title pt-6">Product Solution</div>
@@ -50,19 +50,37 @@
     :imageURL="item.imageURL"
    />
   </section>
-  <section class="main__section mt-28 mb-20 sm:my-24 lg:mx-16 xl:mx-38">
+  <section
+   class="main__section mt-28 mb-20 sm:my-24 lg:mx-16 xl:mx-38"
+   data-aos="fade-up"
+  >
    <Contact />
   </section>
  </div>
 </template>
 <script>
+// Solva Assets
+import solvaLogo from "@/assets/solva_logo.svg";
+import solvaCardOne from "@/assets/image/solva/solva-1.png";
+import solvaCardTwo from "@/assets/image/solva/solva-2.png";
+import solvaCardThree from "@/assets/image/solva/solva-3.png";
+
+// Madoo Assets
+import madooLogo from "@/assets/madoo_logo.svg";
+import madooCardOne from "@/assets/image/madoo/madoo-1.png";
+import madooCardTwo from "@/assets/image/madoo/madoo-2.png";
+
+// Hotelis Assets
+import hotelisLogo from "@/assets/hotelis_logo.svg";
+import hotelisCardOne from "@/assets/image/hotelis/hotelis-1.png";
+import hotelisCardTwo from "@/assets/image/hotelis/hotelis-2.png";
 export default {
  data: () => ({
   products: [
    {
     name: "Solva",
     data: {
-     logo: "/src/assets/solva_logo.svg",
+     logo: solvaLogo,
      subheading: "All in One Loyalty Solutions",
      description: `Solution to increase your customer loyalty and reward them with wide range
      of redemption options`,
@@ -81,19 +99,19 @@ export default {
        placement: "left",
        title: "Create a loyalty app your customers will love",
        desc: `A comprehensive loyalty app that is fully customizable to your brand but already packed with features you need to engage with your customers.`,
-       imageURL: `/src/assets/image/solva/solva-1.png`,
+       imageURL: solvaCardOne,
       },
       {
        placement: "right",
        title: "Easy and intuitive program management",
        desc: `A loyalty  program  system  shouldn’t be managed by IT or your dev team. With our user friendly backoffice platform, changes are easy and intuitive for anyone on your team.`,
-       imageURL: `/src/assets/image/solva/solva-2.png`,
+       imageURL: solvaCardTwo,
       },
       {
        placement: "left",
        title: "Monitoring your loyalty program with ease",
        desc: `Provide a key metrics data , so you can see how your loyalty program perform at a glance. Leveraging data insights to make an informed decision-making`,
-       imageURL: `/src/assets/image/solva/solva-3.png`,
+       imageURL: solvaCardThree,
       },
      ],
     },
@@ -101,7 +119,7 @@ export default {
    {
     name: "Madoo",
     data: {
-     logo: "/src/assets/madoo_logo.svg",
+     logo: madooLogo,
      subheading: "Point & Wallet Exchange",
      description: `Solution to increase the value of your loyalty program by exanding your reward catalouge `,
      features: [
@@ -119,13 +137,13 @@ export default {
        placement: "left",
        title: "Increase your loyalty program value by expanding reward option ",
        desc: `With the Madoo app, your member can now convert their unused point balance to airline miles, hotel rewards, dining points and many more.`,
-       imageURL: `/src/assets/image/madoo/madoo-1.png`,
+       imageURL: madooCardOne,
       },
       {
        placement: "right",
        title: "Hassle-Free Points Transfer",
        desc: `Your member can convert their unused  points between different loyalty program with ease.`,
-       imageURL: `/src/assets/image/madoo/madoo-2.png`,
+       imageURL: madooCardTwo,
       },
      ],
     },
@@ -133,7 +151,7 @@ export default {
    {
     name: "Hotelis",
     data: {
-     logo: "/src/assets/hotelis_logo.svg",
+     logo: hotelisLogo,
      subheading: "Loyalty Solution For Hotel",
      description: `Hotelis is a loyalty solution designed for hotel groups with multiple properties. The platform is integrated to your booking engine and PMS, delivering a seamless experience for both your members and internal staff `,
      features: [
@@ -151,22 +169,16 @@ export default {
        placement: "left",
        title: "Create a powerful & engaging mobile App",
        desc: `A comprehensive loyalty app that is fully customizable to your brand but already packed with features you need to engage with your customers. From redeeming point to make a booking.`,
-       imageURL: `/src/assets/image/hotelis/hotelis-1.png`,
+       imageURL: hotelisCardOne,
       },
       {
        placement: "right",
        title: "Easy & Intuitive Backoffice platform",
        desc: `A loyalty  program  system  shouldn’t be managed by IT or your dev team. With our user friendly backoffice platform, changes are easy and intuitive for anyone on your team.`,
-       imageURL: `/src/assets/image/hotelis/hotelis-2.png`,
+       imageURL: hotelisCardTwo,
       },
      ],
     },
-   },
-   {
-    name: "TS_Media",
-    title: "Influencing Behaviour",
-    logoURL: "/src/assets/ts_logo.png",
-    imageURL: "/src/assets/ts_image.png",
    },
   ],
  }),

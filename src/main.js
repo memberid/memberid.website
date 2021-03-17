@@ -13,6 +13,7 @@ import { fad } from "@fortawesome/pro-duotone-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { Carousel, Slide } from "vue-snap";
 import "vue-snap/dist/vue-snap.css";
+import 'animate.css';
 
 // Components
 import Header from "./components/layout/Header.vue";
@@ -38,5 +39,6 @@ app.component("Contact", Contact);
 // Library
 app.component("font-awesome-icon", FontAwesomeIcon);
 app.component("Carousel", Carousel).component("Slide", Slide);
+
 
 app.mount("#app");

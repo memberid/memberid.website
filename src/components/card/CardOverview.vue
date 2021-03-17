@@ -1,16 +1,25 @@
 <template>
  <div class="card__overview" :class="classPlacement">
-  <div class="card__title text-2xl lg:text-4xl xl:text-5xl font-bold">
+  <div
+   class="card__title text-2xl lg:text-4xl xl:text-5xl font-bold"
+   :data-aos="placement === 'right' ? 'fade-right' : 'fade-left'"
+   data-aos-delay="10"
+  >
    {{ title }}
   </div>
-  <div class="card__body">
+  <div
+   class="card__body"
+   :data-aos="placement === 'right' ? 'fade-right' : 'fade-left'"
+  >
    <div class="card__description" v-html="desc"></div>
    <div class="card__button" v-if="button">
-    <ButtonBase>{{ button.title }}</ButtonBase>
+    <ButtonBase :to="button.to" :href="button.href">{{
+     button.title
+    }}</ButtonBase>
    </div>
   </div>
 
-  <div class="card__image glass">
+  <div class="card__image glass" data-aos="fade-up">
    <img :src="imageURL" />
   </div>
  </div>
@@ -28,7 +37,7 @@ export default {
 <style lang="scss">
 .card {
  &__overview {
-  @apply flex flex-wrap py-6 space-y-6;
+  @apply flex flex-wrap py-6 space-y-6 gap-x-10 xl:gap-x-0;
   .card {
    &__image {
     @apply sm:w-full xl:w-10/12;

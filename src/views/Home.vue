@@ -2,7 +2,11 @@
  <div class="main__home">
   <section class="main__section glass space-y-6 lg:mb-12">
    <div class="jumbotron">
-    <div class="jumbotron__header">
+    <div
+     class="jumbotron__header"
+     data-aos="fade-right"
+     data-aos-anchor-placement="top-center"
+    >
      <div class="main__underline w-0 mb-4 desktop" />
      <div class="jumbotron__title">Influencing Customer Behavior</div>
      <div class="jumbotron__lead">
@@ -10,27 +14,31 @@
       personalized media contents and targeted digital campaigns.
      </div>
     </div>
-    <div class="jumbotron__image">
-     <img src="/src/assets/image/jumbotron.png" alt="" />
+    <div class="jumbotron__image" data-aos="fade">
+     <img :src="imageJumbotron" alt="" />
     </div>
    </div>
 
    <div class="card text-center">
-    <div class="card__title px-6 font-bold text-lg lg:text-xl 2xl:text-2xl">
+    <div
+     class="card__title px-6 font-bold text-lg lg:text-xl 2xl:text-2xl"
+     data-aos="fade"
+     data-aos-delay="10"
+    >
      Featured Products & Solutions
     </div>
     <div class="card__body">
      <div class="products__overview bg-white">
-      <div class="products__item">
+      <div class="products__item" data-aos="fade-up" data-aos-delay="100">
        <img src="/src/assets/madoo_logo.png" />
       </div>
-      <div class="products__item">
+      <div class="products__item" data-aos="fade-up" data-aos-delay="300">
        <img src="/src/assets/solva_logo.png" />
       </div>
-      <div class="products__item">
+      <div class="products__item" data-aos="fade-up" data-aos-delay="500">
        <img src="/src/assets/hotelis_logo.png" />
       </div>
-      <div class="products__item">
+      <div class="products__item" data-aos="fade-up" data-aos-delay="700">
        <img src="/src/assets/ts_logo.png" />
       </div>
      </div>
@@ -52,25 +60,40 @@
       <ul
        class="space-y-8 sm:flex lg:justify-center lg:space-x-10 xl:space-x-16"
       >
-       <li class="px-4 space-y-1 lg:text-xl">
+       <li
+        class="px-4 space-y-1 lg:text-xl"
+        data-aos="fade-up"
+        data-aos-delay="100"
+        data-aos-anchor-placement="bottom-bottom"
+       >
         <font-awesome-icon
-         class="pb-2 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl"
+         class="pb-2 text-5xl lg:text-6xl xl:text-7xl"
          :icon="['fad', 'users']"
         />
         <div class="font-bold xl:w-2/3 xl:m-auto">Total Members Managed</div>
         <div>2 Million+</div>
        </li>
-       <li class="px-4 space-y-1 lg:text-xl">
+       <li
+        class="px-4 space-y-1 lg:text-xl"
+        data-aos="fade-up"
+        data-aos-delay="300"
+        data-aos-anchor-placement="bottom-bottom"
+       >
         <font-awesome-icon
-         class="pb-2 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl"
+         class="pb-2 text-5xl lg:text-6xl xl:text-7xl"
          :icon="['fad', 'handshake-alt']"
         />
         <div class="font-bold xl:w-2/3 xl:m-auto">Increased Wallet Share</div>
         <div>2 Million+</div>
        </li>
-       <li class="px-4 space-y-1 lg:text-xl">
+       <li
+        class="px-4 space-y-1 lg:text-xl"
+        data-aos="fade-up"
+        data-aos-delay="500"
+        data-aos-anchor-placement="bottom-bottom"
+       >
         <font-awesome-icon
-         class="pb-2 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl"
+         class="pb-2 text-5xl lg:text-6xl xl:text-7xl"
          :icon="['fad', 'users']"
         />
         <div class="font-bold xl:w-2/3 xl:m-auto">Total Members Managed</div>
@@ -92,98 +115,119 @@
 
   <section class="main__section py-16 lg:py-20 lg:mx-16 xl:mx-38">
    <div class="profiles">
-    <div class="mb-6 text-center text-2xl lg:text-4xl 2xl:text-5xl font-bold">
+    <div
+     class="mb-10 text-center text-2xl lg:text-4xl 2xl:text-5xl font-bold"
+     data-aos="fade"
+    >
      Our Team
     </div>
     <div class="carousel__cards">
-     <carousel class="carousel" ref="carousel">
-      <slide
-       class="carousel__slide"
-       v-for="(profile, key) in profiles"
-       :key="key"
-      >
-       <div class="carousel__item">
-        <div class="card-profile">
-         <div class="card-profile__item glass">
-          <div class="card-profile__image">
-           <img :src="`/src/assets/image/` + profile.image" />
-          </div>
-          <div class="card-profile__head">
-           <div class="text-2xl font-bold">{{ profile.name }}</div>
-           <div class="text-base font-light">{{ profile.title }}</div>
-          </div>
-          <div class="card-profile__bio">
-           <div class="flex h-full justify-center items-center glass">
-            <p v-html="profile.bio"></p>
-           </div>
-          </div>
+     <div
+      class="carousel__item m-auto lg:m-0"
+      v-for="(profile, key) in profiles"
+      :key="key"
+      data-aos="fade-up"
+      :data-aos-delay="100 * (key + 2)"
+      data-aos-anchor-placement="bottom-bottom"
+     >
+      <div class="card-profile">
+       <div class="card-profile__item glass">
+        <div class="card-profile__image">
+         <img :src="profile.image" />
+        </div>
+        <div class="card-profile__head">
+         <div class="text-2xl font-bold">{{ profile.name }}</div>
+         <div class="text-base font-light">{{ profile.title }}</div>
+        </div>
+        <div class="card-profile__bio">
+         <div class="flex h-full justify-center items-center glass">
+          <p v-html="profile.bio"></p>
          </div>
         </div>
        </div>
-      </slide>
-      <template #arrows="{ changeSlide }">
-       <div class="carousel__navigation mobile">
-        <font-awesome-icon
-         class="carousel__navigation-left text-lg"
-         :icon="['far', 'arrow-left']"
-         @click="$refs.carousel.changeSlide(-1)"
-        />
-        <font-awesome-icon
-         class="carousel__navigation-right text-lg"
-         :icon="['far', 'arrow-right']"
-         @click="$refs.carousel.changeSlide(1)"
-        />
-       </div>
-      </template>
-     </carousel>
+      </div>
+     </div>
     </div>
    </div>
 
-   <div class="brands pt-16 lg:pt-28">
+   <div class="brands pt-16 lg:pt-28" data-aos="fade-up">
     <div class="text-center font-bold text-lg lg:text-xl 2xl:text-2xl">
      Our Clients & Partners
     </div>
     <div class="carousel__brands">
-     <carousel class="carousel" ref="carousel">
+     <carousel class="carousel" ref="carousel" :hide-arrows="true">
       <slide class="carousel__slide" v-for="(brand, key) in brands" :key="key">
        <div class="brands__item">
-        <img :src="`/src/assets/image/brands/` + brand.image" />
+        <img :src="brand.image" />
        </div>
       </slide>
 
-      <template #arrows="{ changeSlide }">
-       <div class="carousel__navigation">
+      <slot name="arrows">
+       <button
+        type="button"
+        class="vs-carousel__arrows vs-carousel__arrows--left"
+        @click="$refs.carousel.changeSlide(-1)"
+       >
         <font-awesome-icon
          class="carousel__navigation-left text-lg"
          :icon="['far', 'arrow-left']"
-         @click="$refs.carousel.changeSlide(-1)"
         />
+       </button>
+
+       <button
+        type="button"
+        class="vs-carousel__arrows vs-carousel__arrows--right"
+        @click="$refs.carousel.changeSlide(1)"
+       >
         <font-awesome-icon
          class="carousel__navigation-right text-lg"
          :icon="['far', 'arrow-right']"
-         @click="$refs.carousel.changeSlide(1)"
         />
-       </div>
-      </template>
+       </button>
+      </slot>
      </carousel>
     </div>
    </div>
   </section>
 
-  <section class="main__section mt-28 mb-20 sm:my-24 lg:mx-16 xl:mx-38">
+  <section
+   class="main__section mt-28 mb-20 sm:my-24 lg:mx-16 xl:mx-38"
+   data-aos="fade-up"
+  >
    <Contact />
   </section>
  </div>
 </template>
 <script>
+import imageJumbotron from "@/assets/image/jumbotron.png";
+import imageCardLeft from "@/assets/image/consulting_image.png";
+import imageCardRight from "@/assets/image/ts_image.png";
+//Profiles
+import marianneImage from "@/assets/image/marianne-rumantir.jpg";
+import robertImage from "@/assets/image/robert-tedja.jpg";
+import lunaImage from "@/assets/image/luna-maya.jpg";
+//Brands
+import ismayaBrandImages from "@/assets/image/brands/ismaya_group.png";
+import unionBrandImages from "@/assets/image/brands/union_group.png";
+import djarumBrandImages from "@/assets/image/brands/djarum.png";
+import syahBrandImages from "@/assets/image/brands/syah_establishments.png";
+import unileverBrandImages from "@/assets/image/brands/unilever.png";
+import plataranBrandImages from "@/assets/image/brands/plataran.png";
+import foreBrandImages from "@/assets/image/brands/fore.png";
+import bagscityBrandImages from "@/assets/image/brands/bags_city.png";
+import burgreensBrandImages from "@/assets/image/brands/burgreens.png";
+import artotelBrandImages from "@/assets/image/brands/artotel.png";
+import qlueBrandImages from "@/assets/image/brands/qlue.png";
+import huntstreetBrandImages from "@/assets/image/brands/huntstreet.png";
 export default {
  name: "App",
  data: () => ({
+  imageJumbotron: imageJumbotron,
   profiles: [
    {
     name: "Marianne Rumantir",
     title: "Chief Executive Officer",
-    image: "marianne-rumantir.jpg",
+    image: marianneImage,
     bio: `Marianne is an aviation geek and points obsessed traveler with extensive experience working as a senior marketing and loyalty professional in multinational companies in Indonesia (HSBC),
        Australia (NAB, JLL)  and the United States as well as establishing a number of hospitality and an e-commerce business in Australia and the US which has earned her several Awards.<br><br>
         Through her passion in travel and sports she co-created Travel Secrets (TS Media) with Luna Maya with the aim to help Indonesians become a positive influence in the society.`,
@@ -191,7 +235,7 @@ export default {
    {
     name: "Robert Tedja",
     title: "Chief Operating Officer",
-    image: "robert-tedja.jpg",
+    image: robertImage,
     bio: `With a strong background in consulting in Indonesia and Canada (Deloitte Consulting), strategy and analytics (CIBC). Robert is a seasoned strategist with a passion in technology and data analytics.<br><br>
       Robert’s past experiences include e-Payments business transformation roadmap development for a leading telecommunications company in Indonesia, including organizational alignment and product positioning strategy,
       channel strategy improvement, market research to size government accounting systems market in 4 countries across Southeast Asia and commercial due diligence.`,
@@ -199,7 +243,7 @@ export default {
    {
     name: "Luna Maya",
     title: "Managing Partner",
-    image: "luna-maya.jpg",
+    image: lunaImage,
     bio: `Luna is a respected actress and entrepreneur with over 20 years of experience in the media and entertainment industry.<br><br>
       Her line of business in Luna Enterprises includes Luna Habit (Fashion), Nama Beauty (Cosmetics), Macama (F&B) and multiple products and brand collaborations in footwear, home accessories and hospitality.<br><br>
       As co-creator of Travel Secrets (TS Media) with her long-time friend Marianne, Luna brings in her expertise in content creation to serve brands and inspire the audience on a larger scale.  `,
@@ -208,51 +252,51 @@ export default {
   brands: [
    {
     title: "Ismaya Group",
-    image: "ismaya_group.png",
+    image: ismayaBrandImages,
    },
    {
     title: "Union Group",
-    image: "union_group.png",
+    image: unionBrandImages,
    },
    {
     title: "Djarum",
-    image: "djarum.png",
+    image: djarumBrandImages,
    },
    {
     title: "Syah Establishments",
-    image: "syah_establishments.png",
+    image: syahBrandImages,
    },
    {
     title: "Unilever",
-    image: "unilever.png",
+    image: unileverBrandImages,
    },
    {
     title: "Plataran",
-    image: "plataran.png",
+    image: plataranBrandImages,
    },
    {
     title: "fore",
-    image: "fore.png",
+    image: foreBrandImages,
    },
    {
     title: "Bag's City",
-    image: "bags_city.png",
+    image: bagscityBrandImages,
    },
    {
     title: "Burgreens",
-    image: "burgreens.png",
+    image: burgreensBrandImages,
    },
    {
     title: "Artotel",
-    image: "artotel.png",
+    image: artotelBrandImages,
    },
    {
     title: "Qlue",
-    image: "qlue.png",
+    image: qlueBrandImages,
    },
    {
     title: "Hunstreet",
-    image: "huntstreet.png",
+    image: huntstreetBrandImages,
    },
   ],
   profilesCarouselSettings: {
@@ -275,18 +319,20 @@ export default {
    title: "Consulting Services",
    desc: `Our team of consultants and data analysts will help formulize your marketing strategy and loyalty program design using data-driven insight.
    `,
-   imageURL: `/src/assets/image/consulting_image.png`,
+   imageURL: imageCardLeft,
    button: {
     title: "Get in Touch",
+    to: "Product",
    },
   },
   cardRight: {
    title: "TS Media",
    desc: `Our content-driven production focuses on travel, lifestyle, culinary, sports, hobbies and finance.
    `,
-   imageURL: `/src/assets/image/ts_image.png`,
+   imageURL: imageCardRight,
    button: {
     title: "Get in Touch",
+    href: "http://www.travelsecret.id",
    },
   },
  }),
@@ -295,7 +341,8 @@ export default {
 </script>
 <style lang="scss">
 .jumbotron {
- @apply flex flex-col px-6 pt-6;
+ height: 80vh;
+ @apply flex items-center justify-center flex-col sm:h-full sm:px-6 sm:pt-6;
 
  @screen lg {
   @apply flex-row items-center pt-16 pr-0 pl-16;
@@ -314,7 +361,7 @@ export default {
  }
 
  &__title {
-  @apply font-bold text-2xl pb-4 2xl:pb-12 lg:text-4xl xl:text-5xl xl:w-3/4;
+  @apply font-bold text-4xl pb-4 2xl:pb-12 lg:text-4xl xl:text-5xl xl:w-3/4;
  }
 
  &__lead {
@@ -324,7 +371,7 @@ export default {
  }
 
  &__image {
-  @apply order-first;
+  @apply order-first pb-12 sm:pb-0;
 
   @screen lg {
    @apply flex-auto w-1/4 order-2;
@@ -341,7 +388,7 @@ export default {
 }
 
 .products__overview {
- @apply grid grid-cols-2 grid-rows-2 gap-5 items-center justify-items-center px-8 sm:px-14 xl:px-0 rounded-xl h-44 sm:h-32 2xl:h-36;
+ @apply grid gap-12 items-center justify-items-center p-12 sm:px-8 sm:px-14 rounded-xl sm:h-32 2xl:h-36;
 
  @screen sm {
   @apply grid-cols-4 grid-rows-1;
@@ -357,7 +404,7 @@ export default {
 }
 
 .features {
- @apply p-8 lg:py-20 xl:pb-32 2xl:pb-28;
+ @apply m-8 lg:py-20 xl:mb-32 2xl:mb-28;
  ul {
   @screen sm {
    @apply flex py-16 space-y-0;
@@ -369,7 +416,7 @@ export default {
  @apply space-y-6;
  &__item {
   img {
-   @apply h-40;
+   @apply h-40 w-full object-contain;
   }
  }
 }

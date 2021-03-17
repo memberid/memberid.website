@@ -1,18 +1,26 @@
 <template>
  <div class="main__product">
   <div class="main__section">
-   <div class="pb-12 text-center text-2xl lg:text-4xl xl:text-5xl font-bold">
+   <div
+    class="pb-12 text-center text-2xl lg:text-4xl xl:text-5xl font-bold"
+    data-aos="fade"
+   >
     Discover Our Products
    </div>
    <div class="carousel__cards">
-    <carousel class="carousel" ref="carousel">
+    <carousel class="carousel w-full" ref="carousel" :hide-arrows="true">
      <slide
       class="carousel__slide"
       v-for="(product, key) in products"
       :key="key"
+      data-aos="fade-up"
+      :data-aos-delay="100 * (key + 2)"
      >
       <div class="block">
-       <div class="carousel__item" @click="goToDetail(product.name)">
+       <div
+        class="carousel__item m-auto"
+        @click="goToDetail(product.otherUrl || product.name)"
+       >
         <div class="card-product">
          <div class="card-product__item glass">
           <div class="card-product__image">
@@ -33,125 +41,72 @@
        </div>
       </div>
      </slide>
-
-     <template #arrows="{ changeSlide }">
-      <div class="carousel__navigation mobile">
-       <font-awesome-icon
-        class="carousel__navigation-left text-lg"
-        :icon="['far', 'arrow-left']"
+     <slot name="arrows">
+      <div class="mobile">
+       <button
+        type="button"
+        class="vs-carousel__arrows vs-carousel__arrows--left"
         @click="$refs.carousel.changeSlide(-1)"
-       />
-       <font-awesome-icon
-        class="carousel__navigation-right text-lg"
-        :icon="['far', 'arrow-right']"
+       >
+        <font-awesome-icon
+         class="carousel__navigation-left text-lg"
+         :icon="['far', 'arrow-left']"
+        />
+       </button>
+
+       <button
+        type="button"
+        class="vs-carousel__arrows vs-carousel__arrows--right"
         @click="$refs.carousel.changeSlide(1)"
-       />
+       >
+        <font-awesome-icon
+         class="carousel__navigation-right text-lg"
+         :icon="['far', 'arrow-right']"
+        />
+       </button>
       </div>
-     </template>
+     </slot>
     </carousel>
    </div>
   </div>
  </div>
 </template>
 <script>
+import solvaLogo from "@/assets/solva_logo.png";
+import madooLogo from "@/assets/madoo_logo.png";
+import hotelisLogo from "@/assets/hotelis_logo.png";
+import tsLogo from "@/assets/ts_logo.png";
+
+import solvaImage from "@/assets/solva_image.png";
+import madooImage from "@/assets/madoo_image.png";
+import hotelisImage from "@/assets/hotelis_image.png";
+import tsImage from "@/assets/ts_image.png";
 export default {
  data: () => ({
   products: [
    {
     name: "Solva",
     title: "All in One Loyalty Solution",
-    logoURL: "/src/assets/solva_logo.png",
-    imageURL: "/src/assets/solva_image.png",
-    data: {
-     logo: "/src/assets/solva_logo.svg",
-     subheading: "All in One Loyalty Solutions",
-     description: `Solution to increase your customer loyalty and reward them with wide range
-     of redemption options`,
-     features: [
-      {
-       type: "Services",
-       name: "Loyalty Solution",
-      },
-      {
-       type: "Industry",
-       name: "Food and Beverage,Retail & Services",
-      },
-     ],
-     cards: [
-      {
-       placement: "left",
-       title: "Create a loyalty app your customers will love",
-       desc: `A comprehensive loyalty app that is fully customizable to your brand but already packed with features you need to engage with your customers.`,
-       imageURL: `/src/assets/image/solva/solva-1.png`,
-      },
-      {
-       placement: "right",
-       title: "Easy and intuitive program management",
-       desc: `A loyalty  program  system  shouldn’t be managed by IT or your dev team. With our user friendly backoffice platform, changes are easy and intuitive for anyone on your team.`,
-       imageURL: `/src/assets/image/solva/solva-2.png`,
-      },
-      {
-       placement: "left",
-       title: "Monitoring your loyalty program with ease",
-       desc: `Provide a key metrics data , so you can see how your loyalty program perform at a glance. Leveraging data insights to make an informed decision-making`,
-       imageURL: `/src/assets/image/solva/solva-3.png`,
-      },
-     ],
-    },
+    logoURL: solvaLogo,
+    imageURL: solvaImage,
    },
    {
     name: "Madoo",
     title: "Points Wallet & Exchange",
-    logoURL: "/src/assets/madoo_logo.png",
-    imageURL: "/src/assets/madoo_image.png",
-    data: {
-     logo: "/src/assets/solva_logo.svg",
-     subheading: "All in One Loyalty Solutions",
-     description: `Solution to increase your customer loyalty and reward them with wide range
-     of redemption options`,
-     features: [
-      {
-       type: "Services",
-       name: "Loyalty Solution",
-      },
-      {
-       type: "Industry",
-       name: "Food and Beverage,Retail & Services",
-      },
-     ],
-     cards: [
-      {
-       placement: "left",
-       title: "Create a loyalty app your customers will love",
-       desc: `A comprehensive loyalty app that is fully customizable to your brand but already packed with features you need to engage with your customers.`,
-       imageURL: `/src/assets/image/solva/solva-1.png`,
-      },
-      {
-       placement: "right",
-       title: "Easy and intuitive program management",
-       desc: `A loyalty  program  system  shouldn’t be managed by IT or your dev team. With our user friendly backoffice platform, changes are easy and intuitive for anyone on your team.`,
-       imageURL: `/src/assets/image/solva/solva-2.png`,
-      },
-      {
-       placement: "left",
-       title: "Monitoring your loyalty program with ease",
-       desc: `Provide a key metrics data , so you can see how your loyalty program perform at a glance. Leveraging data insights to make an informed decision-making`,
-       imageURL: `/src/assets/image/solva/solva-3.png`,
-      },
-     ],
-    },
+    logoURL: madooLogo,
+    imageURL: madooImage,
    },
    {
     name: "Hotelis",
     title: "Loyalty Solutions for Hotels",
-    logoURL: "/src/assets/hotelis_logo.png",
-    imageURL: "/src/assets/hotelis_image.png",
+    logoURL: hotelisLogo,
+    imageURL: hotelisImage,
    },
    {
     name: "TS_Media",
     title: "Influencing Behaviour",
-    logoURL: "/src/assets/ts_logo.png",
-    imageURL: "/src/assets/ts_image.png",
+    logoURL: tsLogo,
+    imageURL: tsImage,
    },
   ],
   productsCarouselSettings: {
@@ -169,10 +124,14 @@ export default {
  }),
  methods: {
   goToDetail(name) {
-   this.$router.push({
-    name: "Product Detail",
-    params: { name: name },
-   });
+   if (name === "TS_Media") {
+    window.open("http://www.travelsecret.id", "_blank");
+   } else {
+    this.$router.push({
+     name: "Product Detail",
+     params: { name: name },
+    });
+   }
   },
  },
 };
@@ -196,7 +155,7 @@ export default {
   }
   .card {
    &-product {
-    @apply shadow-md;
+    @apply shadow-md cursor-pointer;
     min-width: 200px;
     height: 55vh;
     @screen md {

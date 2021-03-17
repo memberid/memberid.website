@@ -14,9 +14,14 @@
  </div>
 </template>
 
-<script setup>
-// This starter template is using Vue 3 experimental <script setup> SFCs
-// Check out https://github.com/vuejs/rfcs/blob/script-setup-2/active-rfcs/0000-script-setup.md
+<script>
+import AOS from "aos";
+import "aos/dist/aos.css";
+export default {
+ async created() {
+  await AOS.init({ duration: 600 });
+ },
+};
 </script>
 
 <style lang="scss">
@@ -28,7 +33,7 @@
 }
 
 .viewport {
- @apply h-screen overflow-x-hidden;
+ @apply min-h-screen;
  background: #f8f8f8;
 }
 
@@ -129,7 +134,7 @@
 
  &-profile,
  &-product {
-  @apply w-full rounded-xl;
+  @apply rounded-xl;
   &__item {
    @apply flex items-center justify-center w-full p-3;
   }
@@ -150,9 +155,13 @@
  }
 
  &-profile {
+  @apply w-full mb-8 sm:mb-0;
   &__image {
-   height: 500px;
+   height: 450px;
    width: 100%;
+   @screen sm {
+    height: 500px;
+   }
    img {
     @apply w-full h-full object-cover rounded-xl;
     filter: grayscale(1) brightness(0.9);
@@ -172,8 +181,16 @@
     overflow-x: hidden;
     padding: 1rem 2rem;
     margin: 10px;
-    height: 500px;
+    height: 450px;
+    @screen sm {
+     height: 500px;
+    }
    }
+  }
+ }
+ &-product {
+  .carousel__item & {
+   @apply m-auto;
   }
  }
 }
@@ -232,9 +249,17 @@
  }
 
  &__cards {
+  @apply space-y-8 xl:space-x-8;
+  @screen lg {
+   @apply flex justify-between items-center space-y-0 space-x-8;
+  }
   .carousel {
    &__item {
-    @apply w-full m-auto sm:w-3/5  lg:w-full xl:px-4 2xl:w-4/5;
+    max-width: 280px;
+    @apply w-full sm:w-3/5 lg:w-full 2xl:w-4/5;
+    @screen lg {
+     max-width: 300px;
+    }
    }
   }
  }
