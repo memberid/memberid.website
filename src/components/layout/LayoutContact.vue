@@ -11,7 +11,7 @@
     cards and our friendly team will help you with your needs.
    </div>
    <div class="contact__banner-button">
-    <ButtonBase color="primary">Talk To Us</ButtonBase>
+    <ButtonBase color="primary" to="Contact">Talk To Us</ButtonBase>
    </div>
   </div>
  </div>
