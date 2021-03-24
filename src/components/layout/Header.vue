@@ -14,17 +14,35 @@
    <font-awesome-icon :icon="['fad', 'bars']" />
   </div>
   <template v-if="isMenu">
-   <div class="menu">
-    <div class="menu__wrapper">
+   <div
+    class="menu animate__animated animate__fast"
+    :class="[{ animate__fadeOut: isMenuAnimate }, { isOpen: isMenu }]"
+   >
+    <div
+     class="animate__animated animate__fadeInLeft animate__fast menu__wrapper"
+     :class="{ animate__fadeOutLeft: isMenuAnimate }"
+    >
      <div class="menu__navigation">
       <div class="menu__close" @click="openMenu(false)">
-       <font-awesome-icon :icon="['fad', 'times']" />
+       <font-awesome-icon size="lg" :icon="['fad', 'times']" />
       </div>
      </div>
      <div class="menu__list">
-      <router-link to="/product"> Product </router-link>
-      <router-link to="/about"> About Us </router-link>
-      <router-link to="/contact"> Contact </router-link>
+      <router-link class="w-max" to="/product">
+       <span class="font-semibold text-lg" @click="openMenu(false)">
+        Product
+       </span>
+      </router-link>
+      <router-link class="w-max" to="/about">
+       <span class="font-semibold text-lg" @click="openMenu(false)">
+        About Us
+       </span>
+      </router-link>
+      <router-link class="w-max" to="/contact">
+       <span class="font-semibold text-lg" @click="openMenu(false)">
+        Contact
+       </span>
+      </router-link>
      </div>
     </div>
    </div>
@@ -36,11 +54,26 @@ export default {
  data() {
   return {
    isMenu: false,
+   isMenuAnimate: false,
   };
  },
  methods: {
   openMenu(event) {
-   this.isMenu = event;
+   var app = document.querySelector("#app");
+   var myBody = document.getElementsByTagName("body")[0];
+   if (!event) {
+    this.isMenuAnimate = true;
+    setTimeout(() => {
+     this.isMenu = event;
+    }, 1000);
+    myBody.classList.remove("isOpenMenu");
+    app.classList.remove("isOpenMenu");
+   } else {
+    this.isMenuAnimate = false;
+    this.isMenu = event;
+    myBody.classList.toggle("isOpenMenu");
+    app.classList.toggle("isOpenMenu");
+   }
   },
  },
 };
@@ -78,7 +111,7 @@ export default {
   background: white;
   width: 80%;
   border-radius: 0 10px 10px 0;
-  padding: 1.25rem;
+  padding: 2rem;
  }
 
  &__navigation {
@@ -93,10 +126,11 @@ export default {
 
  &__close {
   position: absolute;
-  display: flex;
-  width: 100%;
-  justify-content: flex-end;
+  right: 0;
   z-index: 1001;
  }
+}
+.isOpenMenu {
+ overflow: hidden;
 }
 </style>

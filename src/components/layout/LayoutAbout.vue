@@ -45,12 +45,12 @@ export default {
 <style lang="scss">
 .about {
  @apply flex items-center;
- height: calc(100vh - 16vh);
- &__head {
-  @apply relative z-10 w-full lg:w-2/4 space-y-6 py-10;
+ min-height: calc(100vh - 23vh);
+ @screen sm {
+  min-height: calc(100vh - 16vh);
  }
- &__body {
-  @apply absolute right-0 top-0 h-full;
+ &__head {
+  @apply relative z-10 w-full lg:w-2/4 space-y-6 py-0 sm:py-10;
  }
  &__logo {
   @apply w-52 lg:w-80;
@@ -58,28 +58,8 @@ export default {
    @apply w-full h-full;
   }
  }
- &__list {
-  @apply absolute z-50 flex items-center mt-8 space-x-8;
- }
- &__item {
-  @apply w-28 opacity-40;
-  transition: opacity 0.3s;
-  &:hover,
-  &.active {
-   @apply opacity-100;
-  }
- }
  &__description {
   @apply pt-4;
- }
- &__background {
-  @apply w-2/3 h-full ml-auto;
-  img {
-   @apply rounded-xl;
-   height: 100%;
-   object-fit: cover;
-   opacity: 0.1;
-  }
  }
 }
 </style>

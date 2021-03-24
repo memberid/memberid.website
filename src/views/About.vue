@@ -137,22 +137,11 @@ export default {
 </script>
 <style lang="scss">
 .about {
- @apply flex items-center;
- height: calc(100vh - 16vh);
- &__head {
-  @apply relative z-10 w-full lg:w-2/4 space-y-6 py-10;
- }
  &__body {
   @apply absolute right-0 top-0 h-full;
  }
- &__logo {
-  @apply w-52 lg:w-80;
-  img {
-   @apply w-full h-full;
-  }
- }
  &__list {
-  @apply absolute z-50 flex items-center mt-8 space-x-12;
+  @apply relative sm:absolute z-50 flex items-center mt-0 sm:mt-8 space-x-12;
  }
  &__item {
   @apply opacity-40;
@@ -164,9 +153,6 @@ export default {
   button {
    @apply w-32 h-10;
   }
- }
- &__description {
-  @apply pt-4;
  }
  &__background {
   @apply w-2/3 h-full ml-auto;

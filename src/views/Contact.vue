@@ -8,6 +8,20 @@
      </div>
     </div>
     <div class="contact__body">
+     <!-- <div class="contact__form">
+      <form action="#">
+       <div class="form__group">
+        <label for="customerName">Name </label
+        ><input id="customerName" name="customerName" required type="text" />
+       </div>
+
+       <div class="form__group">
+        <label for="customerEmail">Email</label>
+        <input id="customerEmail" name="customerEmail" required type="email" />
+       </div>
+       <ButtonBase>SUBMIT</ButtonBase>
+      </form>
+     </div> -->
      <div class="contact__list">
       <div class="contact__item" v-for="(item, idx) in contact" :key="idx">
        <div class="text-2xl font-bold">
@@ -51,6 +65,9 @@ The Maja Building`,
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+ }
+ &__form {
+  @apply w-2/3 m-auto;
  }
 }
 </style>

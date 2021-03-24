@@ -30,17 +30,21 @@ export default {
 #app {
  font-family: "Poppins", sans-serif;
  color: theme("colors.primary");
+ @apply overflow-hidden sm:overflow-auto;
 }
 
 .viewport {
- @apply min-h-screen;
+ @apply min-h-screen overflow-auto;
  background: #f8f8f8;
 }
 
 .main {
  &__wrapper {
   @apply flex items-center justify-center mx-auto w-4/5 2xl:w-2/3;
-  min-height: calc(100vh - 16vh);
+  min-height: calc(100vh - 18vh);
+  @screen sm {
+   min-height: calc(100vh - 16vh);
+  }
  }
 
  &__body {
