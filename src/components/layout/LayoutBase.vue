@@ -34,7 +34,7 @@ export default {
 }
 
 .viewport {
- @apply min-h-screen overflow-auto;
+ @apply min-h-screen;
  background: #f8f8f8;
 }
 

@@ -23,7 +23,13 @@
       </form>
      </div> -->
      <div class="contact__list">
-      <div class="contact__item" v-for="(item, idx) in contact" :key="idx">
+      <div
+       class="contact__item"
+       v-for="(item, idx) in contact"
+       :key="idx"
+       data-aos="fade-up"
+       :data-aos-delay="100 * (idx + 2)"
+      >
        <div class="text-2xl font-bold">
         {{ item.title }}
        </div>
@@ -60,7 +66,7 @@ The Maja Building`,
 .contact {
  height: calc(100vh - 25vh);
  &__list {
-  @apply w-2/3 m-auto flex justify-between text-center;
+  @apply w-2/3 m-auto block sm:flex justify-between text-center space-y-16 sm:space-y-0;
   position: absolute;
   top: 50%;
   left: 50%;

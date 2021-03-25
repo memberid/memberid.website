@@ -156,7 +156,7 @@
     </div>
     <div class="carousel__brands">
      <carousel class="carousel" ref="carousel" :hide-arrows="true">
-      <slide class="carousel__slide" v-for="(brand, key) in brands" :key="key">
+      <slide class="carousel__slide" v-for="(brand, key) of brands" :key="key">
        <div class="brands__item">
         <img :src="brand.image" />
        </div>
@@ -216,9 +216,19 @@ import plataranBrandImages from "@/assets/image/brands/plataran.png";
 import foreBrandImages from "@/assets/image/brands/fore.png";
 import bagscityBrandImages from "@/assets/image/brands/bags_city.png";
 import burgreensBrandImages from "@/assets/image/brands/burgreens.png";
-import artotelBrandImages from "@/assets/image/brands/artotel.png";
-import qlueBrandImages from "@/assets/image/brands/qlue.png";
-import huntstreetBrandImages from "@/assets/image/brands/huntstreet.png";
+import sweetescapeBrandImages from "@/assets/image/brands/sweet_escape.png";
+import loketBrandImages from "@/assets/image/brands/loket.png";
+import garudamilesBrandImages from "@/assets/image/brands/garuda_miles.png";
+import gopayBrandImages from "@/assets/image/brands/gopay.png";
+import krisflyerBrandImages from "@/assets/image/brands/krisflyer.png";
+import airasiaBrandImages from "@/assets/image/brands/air_asia.png";
+import cermatiBrandImages from "@/assets/image/brands/cermati.png";
+import travelokaBrandImages from "@/assets/image/brands/traveloka.png";
+import ffiBrandImages from "@/assets/image/brands/ffi.png";
+import lemoniloBrandImages from "@/assets/image/brands/lemonilo.png";
+import happyfreshBrandImages from "@/assets/image/brands/happy_fresh.png";
+import kulogroupBrandImages from "@/assets/image/brands/kulo_group.png";
+import saladstopBrandImages from "@/assets/image/brands/salad_stop.png";
 export default {
  name: "App",
  data: () => ({
@@ -287,16 +297,56 @@ export default {
     image: burgreensBrandImages,
    },
    {
-    title: "Artotel",
-    image: artotelBrandImages,
+    title: "Sweet Esacape",
+    image: sweetescapeBrandImages,
    },
    {
-    title: "Qlue",
-    image: qlueBrandImages,
+    title: "Loket",
+    image: loketBrandImages,
    },
    {
-    title: "Hunstreet",
-    image: huntstreetBrandImages,
+    title: "Garuda Miles",
+    image: garudamilesBrandImages,
+   },
+   {
+    title: "Gopay",
+    image: gopayBrandImages,
+   },
+   {
+    title: "Krisflyer",
+    image: krisflyerBrandImages,
+   },
+   {
+    title: "Air Asia",
+    image: airasiaBrandImages,
+   },
+   {
+    title: "Cermati",
+    image: cermatiBrandImages,
+   },
+   {
+    title: "Traveloka",
+    image: travelokaBrandImages,
+   },
+   {
+    title: "Festival Film Indonesia",
+    image: ffiBrandImages,
+   },
+   {
+    title: "Lemonilo",
+    image: lemoniloBrandImages,
+   },
+   {
+    title: "Happy Fresh",
+    image: happyfreshBrandImages,
+   },
+   {
+    title: "Kulo Group",
+    image: kulogroupBrandImages,
+   },
+   {
+    title: "Salad Stop",
+    image: saladstopBrandImages,
    },
   ],
   profilesCarouselSettings: {

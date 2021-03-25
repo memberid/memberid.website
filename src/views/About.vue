@@ -71,7 +71,7 @@
     data-aos-anchor-placement="top-center"
    >
     <div class="about__background">
-     <img :src="imageBackground" alt="" />
+     <img :src="imageBackground" loading="lazy" alt="" />
     </div>
    </div>
   </div>
