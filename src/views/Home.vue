@@ -6,6 +6,7 @@
      class="jumbotron__header"
      data-aos="fade-right"
      data-aos-anchor-placement="top-center"
+     data-aos-anchor=".main__home"
     >
      <div class="main__underline w-0 mb-4 desktop" />
      <div class="jumbotron__title">Influencing Customer Behavior</div>
@@ -29,17 +30,15 @@
     </div>
     <div class="card__body">
      <div class="products__overview bg-white">
-      <div class="products__item" data-aos="fade-up" data-aos-delay="100">
-       <img src="/src/assets/madoo_logo.png" />
-      </div>
-      <div class="products__item" data-aos="fade-up" data-aos-delay="300">
-       <img src="/src/assets/solva_logo.png" />
-      </div>
-      <div class="products__item" data-aos="fade-up" data-aos-delay="500">
-       <img src="/src/assets/hotelis_logo.png" />
-      </div>
-      <div class="products__item" data-aos="fade-up" data-aos-delay="700">
-       <img src="/src/assets/ts_logo.png" />
+      <div
+       class="products__item cursor-pointer"
+       v-for="(product, key) in products"
+       :key="key"
+       data-aos="fade-up"
+       :data-aos-delay="100 * (key + 2)"
+       @click="goToDetail(product.otherUrl || product.name)"
+      >
+       <img :src="product.logoURL" />
       </div>
      </div>
     </div>
@@ -202,10 +201,16 @@
 import imageJumbotron from "@/assets/image/jumbotron.png";
 import imageCardLeft from "@/assets/image/consulting_image.png";
 import imageCardRight from "@/assets/image/ts_image.png";
+
 //Profiles
 import marianneImage from "@/assets/image/marianne-rumantir.jpg";
 import robertImage from "@/assets/image/robert-tedja.jpg";
 import lunaImage from "@/assets/image/luna-maya.jpg";
+// Products
+import solvaLogo from "@/assets/solva_logo.png";
+import madooLogo from "@/assets/madoo_logo.png";
+import hotelisLogo from "@/assets/hotelis_logo.png";
+import tsLogo from "@/assets/ts_logo.png";
 //Brands
 import ismayaBrandImages from "@/assets/image/brands/ismaya_group.png";
 import unionBrandImages from "@/assets/image/brands/union_group.png";
@@ -233,6 +238,28 @@ export default {
  name: "App",
  data: () => ({
   imageJumbotron: imageJumbotron,
+  products: [
+   {
+    name: "Solva",
+    title: "All in One Loyalty Solution",
+    logoURL: solvaLogo,
+   },
+   {
+    name: "Madoo",
+    title: "Points Wallet & Exchange",
+    logoURL: madooLogo,
+   },
+   {
+    name: "Hotelis",
+    title: "Loyalty Solutions for Hotels",
+    logoURL: hotelisLogo,
+   },
+   {
+    name: "TS_Media",
+    title: "Influencing Behaviour",
+    logoURL: tsLogo,
+   },
+  ],
   profiles: [
    {
     name: "Marianne Rumantir",
@@ -386,7 +413,18 @@ export default {
    },
   },
  }),
- methods: {},
+ methods: {
+  goToDetail(name) {
+   if (name === "TS_Media") {
+    window.open("http://www.travelsecret.id", "_blank");
+   } else {
+    this.$router.push({
+     name: "Product Detail",
+     params: { name: name },
+    });
+   }
+  },
+ },
 };
 </script>
 <style lang="scss">

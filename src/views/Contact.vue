@@ -66,7 +66,7 @@ The Maja Building`,
 .contact {
  height: calc(100vh - 25vh);
  &__list {
-  @apply w-2/3 m-auto block sm:flex justify-between text-center space-y-16 sm:space-y-0;
+  @apply w-2/3 sm:w-full lg:w-2/3 m-auto block sm:flex justify-between text-center space-y-16 sm:space-y-0;
   position: absolute;
   top: 50%;
   left: 50%;
