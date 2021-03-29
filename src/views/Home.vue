@@ -57,7 +57,7 @@
     <div class="card text-center">
      <div class="card__body">
       <ul
-       class="space-y-8 sm:flex lg:justify-center lg:space-x-10 xl:space-x-16"
+       class="space-y-12 sm:flex lg:justify-center lg:space-x-10 xl:space-x-20"
       >
        <li
         class="px-4 space-y-1 lg:text-xl"
@@ -66,12 +66,13 @@
         data-aos-anchor-placement="bottom-bottom"
        >
         <font-awesome-icon
-         class="pb-2 text-5xl lg:text-6xl xl:text-7xl"
+         class="pb-4 text-6xl xl:text-7xl"
          :icon="['fad', 'users']"
         />
-        <div class="font-bold xl:w-2/3 xl:m-auto">Total Members Managed</div>
-        <div>2 Million+</div>
+        <div class="text-4xl font-bold">2 Million +</div>
+        <div class="xl:w-6/7 xl:m-auto">Total Members Managed</div>
        </li>
+
        <li
         class="px-4 space-y-1 lg:text-xl"
         data-aos="fade-up"
@@ -79,11 +80,11 @@
         data-aos-anchor-placement="bottom-bottom"
        >
         <font-awesome-icon
-         class="pb-2 text-5xl lg:text-6xl xl:text-7xl"
-         :icon="['fad', 'handshake-alt']"
+         class="pb-4 text-6xl xl:text-7xl"
+         :icon="['fad', 'hands-helping']"
         />
-        <div class="font-bold xl:w-2/3 xl:m-auto">Increased Wallet Share</div>
-        <div>2 Million+</div>
+        <div class="text-4xl font-bold">50+</div>
+        <div class="xl:w-6/7 xl:m-auto">Brands We’ve Helped</div>
        </li>
        <li
         class="px-4 space-y-1 lg:text-xl"
@@ -92,11 +93,11 @@
         data-aos-anchor-placement="bottom-bottom"
        >
         <font-awesome-icon
-         class="pb-2 text-5xl lg:text-6xl xl:text-7xl"
-         :icon="['fad', 'users']"
+         class="pb-4 text-6xl xl:text-7xl"
+         :icon="['fad', 'poll']"
         />
-        <div class="font-bold xl:w-2/3 xl:m-auto">Total Members Managed</div>
-        <div>50+</div>
+        <div class="text-4xl font-bold">7%</div>
+        <div class="xl:w-6/7 xl:m-auto">Sales Uplift</div>
        </li>
       </ul>
      </div>
