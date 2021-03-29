@@ -96,7 +96,7 @@
          :icon="['fad', 'users']"
         />
         <div class="font-bold xl:w-2/3 xl:m-auto">Total Members Managed</div>
-        <div>2 Million+</div>
+        <div>50+</div>
        </li>
       </ul>
      </div>
