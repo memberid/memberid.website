@@ -12,6 +12,10 @@ import { fal } from "@fortawesome/pro-light-svg-icons";
 import { fad } from "@fortawesome/pro-duotone-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { Carousel, Slide } from "vue-snap";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import SwiperCore, { Navigation, Autoplay } from "swiper";
+import "swiper/swiper.scss";
+import "swiper/components/pagination/pagination.scss";
 import "vue-snap/dist/vue-snap.css";
 import "animate.css";
 
@@ -41,5 +45,7 @@ app.component("AboutItem", AboutItem);
 // Library
 app.component("font-awesome-icon", FontAwesomeIcon);
 app.component("Carousel", Carousel).component("Slide", Slide);
+SwiperCore.use([Navigation, Autoplay]);
+app.component("Swiper", Swiper).component("SwiperSlide", SwiperSlide);
 
 app.mount("#app");

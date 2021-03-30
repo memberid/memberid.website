@@ -223,6 +223,7 @@ export default {
    position: absolute;
    top: 0;
    bottom: 0;
+   z-index: 100;
    margin: auto;
   }
   &-left {

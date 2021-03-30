@@ -11,8 +11,9 @@
      <div class="main__underline w-0 mb-4 desktop" />
      <div class="jumbotron__title">Influencing Customer Behavior</div>
      <div class="jumbotron__lead">
-      We help communicate your brand promise to your audience through
-      personalized media contents and targeted digital campaigns.
+      We help communicate your brand promise to your audience through customized
+      loyalty programs, personalized media contents and targeted digital
+      campaigns.
      </div>
     </div>
     <div class="jumbotron__image" data-aos="fade">
@@ -155,7 +156,55 @@
      Our Clients & Partners
     </div>
     <div class="carousel__brands">
-     <carousel class="carousel" ref="carousel" :hide-arrows="true">
+     <swiper
+      class="carousel"
+      ref="carouselSwiper"
+      :autoplay="{
+       delay: 3000,
+       disableOnInteraction: false,
+      }"
+      :navigation="{
+       nextEl: '.swiper-button-next',
+       prevEl: '.swiper-button-prev',
+      }"
+      :breakpoints="{
+       320: {
+        slidesPerView: 1,
+        spaceBetween: 10,
+       },
+       640: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+       },
+       1024: {
+        slidesPerView: 4,
+        spaceBetween: 50,
+       },
+      }"
+     >
+      <swiper-slide v-for="(brand, key) of brands" :key="key">
+       <div class="brands__item">
+        <img :src="brand.image" />
+       </div>
+      </swiper-slide>
+
+      <button
+       type="button"
+       class="swiper-button-prev carousel__navigation-left"
+       slot="button-prev"
+      >
+       <font-awesome-icon class="ctext-lg" :icon="['far', 'arrow-left']" />
+      </button>
+
+      <button
+       type="button"
+       class="swiper-button-next carousel__navigation-right"
+       slot="button-next"
+      >
+       <font-awesome-icon class="text-lg" :icon="['far', 'arrow-right']" />
+      </button>
+     </swiper>
+     <!-- <carousel class="carousel" ref="carousel" :hide-arrows="true">
       <slide class="carousel__slide" v-for="(brand, key) of brands" :key="key">
        <div class="brands__item">
         <img :src="brand.image" />
@@ -185,7 +234,7 @@
         />
        </button>
       </slot>
-     </carousel>
+     </carousel> -->
     </div>
    </div>
   </section>
