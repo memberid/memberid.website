@@ -151,6 +151,37 @@
     </div>
    </div>
 
+   <div class="profiles mt-28">
+    <div
+     class="mb-10 text-center text-2xl lg:text-4xl 2xl:text-5xl font-bold"
+     data-aos="fade"
+    >
+     Advisors
+    </div>
+    <div class="carousel__cards">
+     <div
+      class="carousel__item m-auto lg:m-0"
+      v-for="(profile, key) in advisors"
+      :key="key"
+      data-aos="fade-up"
+      :data-aos-delay="100 * (key + 2)"
+      data-aos-anchor-placement="bottom-bottom"
+     >
+      <div class="card-profile">
+       <div class="card-profile__item glass">
+        <div class="card-profile__image">
+         <img :src="profile.image" />
+        </div>
+        <div class="card-profile__head">
+         <div class="text-2xl font-bold">{{ profile.name }}</div>
+         <div class="text-base font-light">{{ profile.title }}</div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+
    <div class="brands pt-16 lg:pt-28" data-aos="fade-up">
     <div class="text-center font-bold text-lg lg:text-xl 2xl:text-2xl">
      Our Clients & Partners
@@ -256,6 +287,10 @@ import imageCardRight from "@/assets/image/ts_image.png";
 import marianneImage from "@/assets/image/marianne-rumantir.jpg";
 import robertImage from "@/assets/image/robert-tedja.jpg";
 import lunaImage from "@/assets/image/luna-maya.jpg";
+// Advisors
+import wilsonImage from "@/assets/image/wilson-cuaca.jpg";
+import edyImage from "@/assets/image/edy-sulistyo.jpg";
+import panduImage from "@/assets/image/pandu-sjahrir.jpg";
 // Products
 import solvaLogo from "@/assets/solva_logo.png";
 import madooLogo from "@/assets/madoo_logo.png";
@@ -334,6 +369,23 @@ export default {
     bio: `Luna is a respected actress and entrepreneur with over 20 years of experience in the media and entertainment industry.<br><br>
       Her line of business in Luna Enterprises includes Luna Habit (Fashion), Nama Beauty (Cosmetics), Macama (F&B) and multiple products and brand collaborations in footwear, home accessories and hospitality.<br><br>
       As co-creator of Travel Secrets (TS Media) with her long-time friend Marianne, Luna brings in her expertise in content creation to serve brands and inspire the audience on a larger scale.  `,
+   },
+  ],
+  advisors: [
+   {
+    name: "Willson Cuaca",
+    title: "Managing Partner East Ventures",
+    image: wilsonImage,
+   },
+   {
+    name: "Edy Sulistyo",
+    title: "CEO GoPlay",
+    image: edyImage,
+   },
+   {
+    name: "Pandu Sjahrir",
+    title: "Managing Director of Indies Capital Partners",
+    image: panduImage,
    },
   ],
   brands: [
@@ -444,7 +496,7 @@ export default {
   },
   cardLeft: {
    title: "Consulting Services",
-   desc: `Our team of consultants and data analysts will help formulize your marketing strategy and loyalty program design using data-driven insight.
+   desc: `Our team of consultants and data analysts will help formulize your marketing strategy and loyalty program design using data-driven insights.
    `,
    imageURL: imageCardLeft,
    button: {
